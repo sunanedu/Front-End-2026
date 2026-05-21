@@ -1479,3 +1479,72 @@ git push origin main
 ---
 
 *หน่วยถัดไป → หน่วยที่ 3: JavaScript สมัยใหม่และ TypeScript*
+
+NOTE****
+หลังเรียนจบหน่วยที่ 2 ไฟล์หลักที่คุณ **เขียนเองจริง ๆ** มีดังนี้:
+
+***
+
+**`index.html`** — ไฟล์ใหญ่ที่สุด เขียนเองทั้งหมด เป็นหน้า Landing Page จริง:
+
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ร้านกาแฟ Bean & Co.</title>
+</head>
+<body>
+
+  <header>
+    <nav>โลโก้ + เมนู</nav>
+  </header>
+
+  <main>
+    <section> <!-- Hero: หัวข้อใหญ่ + ปุ่ม CTA --> </section>
+    <section> <!-- Feature: 3 Card สินค้า --> </section>
+    <section> <!-- Call-to-Action --> </section>
+  </main>
+
+  <footer>ลิขสิทธิ์ ลิงก์ ข้อมูลติดต่อ</footer>
+
+</body>
+</html>
+```
+
+***
+
+**`src/style.css`** — เขียนเองส่วน Custom ที่เพิ่มเติม ส่วน Tailwind ใส่แค่บรรทัดเดียว:
+
+```css
+@import "tailwindcss";
+
+/* ส่วนที่คุณเขียนเอง — CSS Variables ของ Design System */
+:root {
+  --color-primary: #6366f1;
+  --font-display: 'Prompt', sans-serif;
+}
+
+/* ปรับ Style เพิ่มเติมที่ Tailwind ทำไม่ได้ */
+.hero-gradient {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+```
+
+***
+
+**`src/main.js`** — โค้ดน้อยมาก แค่ import CSS กับอาจมี toggle mobile menu:
+
+```js
+import './style.css'
+
+// อาจมีโค้ดเพิ่มเติมเช่น Mobile Menu Toggle
+const menuBtn = document.querySelector('#menu-btn')
+const menu = document.querySelector('#mobile-menu')
+menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'))
+```
+
+***
+
+**`public/`** — รูปที่ export มาจาก Figma เช่น `logo.svg`, `hero-image.webp`, `product-1.png`
