@@ -1417,28 +1417,22 @@ git push origin main
 
 ## สรุปหน่วยที่ 2
 
-```
+
 สิ่งที่เรียนรู้ในหน่วยนี้
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ Semantic HTML ทำให้เว็บ SEO ดีขึ้นและ Accessible
-   ใช้ <header>, <nav>, <main>, <article>, <section>, <footer>
+✅ Semantic HTML ทำให้เว็บ SEO ดีขึ้นและ Accessible   ใช้ <header>, <nav>, <main>, <article>, <section>, <footer>
 
-✅ CSS Custom Properties รวมค่าซ้ำ ๆ ไว้ที่เดียว
-   เปลี่ยน Design ทั้งเว็บได้ด้วยการแก้จุดเดียว
+✅ CSS Custom Properties รวมค่าซ้ำ ๆ ไว้ที่เดียว   เปลี่ยน Design ทั้งเว็บได้ด้วยการแก้จุดเดียว
 
-✅ Flexbox = Layout 1 แกน (แถว หรือ คอลัมน์)
-   Grid = Layout 2 แกน (แถว และ คอลัมน์ พร้อมกัน)
+✅ Flexbox = Layout 1 แกน (แถว หรือ คอลัมน์)   Grid = Layout 2 แกน (แถว และ คอลัมน์ พร้อมกัน)
 
-✅ Mobile-First: เขียน CSS มือถือก่อน ขยายด้วย min-width
-   Container Queries: Responsive ตาม Container ไม่ใช่แค่ Viewport
+✅ Mobile-First: เขียน CSS มือถือก่อน ขยายด้วย min-width   Container Queries: Responsive ตาม Container ไม่ใช่แค่ Viewport
 
-✅ Tailwind CSS v4: Utility-First, เร็ว, ขนาดไฟล์เล็ก
-   shadcn/ui: Component ที่ Accessible, ปรับแต่งได้ 100%
+✅ Tailwind CSS v4: Utility-First, เร็ว, ขนาดไฟล์เล็ก   shadcn/ui: Component ที่ Accessible, ปรับแต่งได้ 100%
 
-✅ อ่าน Figma Dev Mode เพื่อดู Spec, สี, Spacing, Font ได้
-   Export Assets และสื่อสารกับ Designer อย่างมีประสิทธิภาพ
-```
+✅ อ่าน Figma Dev Mode เพื่อดู Spec, สี, Spacing, Font ได้   Export Assets และสื่อสารกับ Designer อย่างมีประสิทธิภาพ
+
 
 ---
 
