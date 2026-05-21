@@ -916,3 +916,64 @@ pnpm dev
 ---
 
 *หน่วยถัดไป → หน่วยที่ 2: HTML, CSS และการออกแบบ UI สมัยใหม่*
+
+NOTE****
+หลังเรียนจบหน่วยที่ 1 โปรเจกต์บน GitHub ของคุณจะมีไฟล์เหล่านี้:
+
+**`README.md`** — ไฟล์ที่คุณ _เขียนเอง_ ตามโจทย์ มีเนื้อหาประมาณนี้:
+
+````markdown
+# สวัสดี ฉันชื่อ [ชื่อคุณ]
+
+ฉันกำลังเรียน Front-End Development
+
+## 🛠 เครื่องมือที่ติดตั้งแล้ว
+- Node.js v22 LTS
+- pnpm
+- VS Code + Extensions
+- Git
+
+## 🚀 วิธีรันโปรเจกต์นี้
+```bash
+pnpm install
+pnpm dev
+```
+
+## 📚 สิ่งที่เรียนในหน่วยนี้
+- Front-End vs Back-End คืออะไร
+- Git & GitHub เบื้องต้น
+- Vite Build Tool
+````
+
+***
+
+**`.gitignore`** — คัดลอกมาตามที่บทเรียนสอน ไม่ต้องเขียนเอง:
+
+```
+node_modules/
+dist/
+.env
+.DS_Store
+```
+
+***
+
+**`package.json`** — Vite สร้างให้อัตโนมัติตอนรัน `pnpm create vite@latest`:
+
+```json
+{
+  "name": "my-profile",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
+```
+
+***
+
+**`index.html`**, **`src/main.js`**, **`vite.config.js`** — Vite สร้างให้ทั้งหมด คุณ _แทบไม่ต้องแตะ_ ในหน่วย 1 โจทย์หลักคือ README.md กับการ Push ขึ้น GitHub ได้สำเร็จ
