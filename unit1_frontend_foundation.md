@@ -850,44 +850,32 @@ pnpm install
 pnpm dev
 ```
 
-เปิดเบราว์เซอร์ที่ http://localhost:3000
 
-## 🛠 เทคโนโลยีที่ใช้
+## 🛠 สรุป เทคโนโลยีที่แนะนำ
 
 - [Next.js 15](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-## 📝 License
-
-MIT
-```
 
 ---
 
 ## สรุปหน่วยที่ 1
 
-```
 สิ่งที่เรียนรู้ในหน่วยนี้
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ Front-End คือการสร้างส่วนที่ผู้ใช้มองเห็น
-   ต่างจาก Back-End ที่ทำงานเบื้องหลัง
+✅ Front-End คือการสร้างส่วนที่ผู้ใช้มองเห็นต่างจาก Back-End ที่ทำงานเบื้องหลัง
 
-✅ เส้นทางที่ชัดเจน:
-   HTML → CSS → JavaScript → TypeScript → React → Next.js
+✅ เส้นทางที่ชัดเจน: HTML → CSS → JavaScript → TypeScript → React → Next.js
 
-✅ เครื่องมือที่ติดตั้งแล้ว:
-   Node.js LTS, pnpm, VS Code + Extensions, Git
+✅ เครื่องมือที่ติดตั้งแล้ว: Node.js LTS, pnpm, VS Code + Extensions, Git
 
-✅ Git เก็บประวัติโค้ด, GitHub เก็บโค้ดบน Cloud
-   คำสั่งหลัก: add → commit → push
+✅ Git เก็บประวัติโค้ด, GitHub เก็บโค้ดบน Cloud คำสั่งหลัก: add → commit → push
 
-✅ Vite คือ Build Tool ที่เร็วและทันสมัย
-   package.json บอกข้อมูลและ dependencies ของโปรเจกต์
+✅ Vite คือ Build Tool ที่เร็วและทันสมัย  package.json บอกข้อมูลและ dependencies ของโปรเจกต์
 
 ✅ node_modules และ .env ต้องอยู่ใน .gitignore เสมอ
-```
 
 ---
 
