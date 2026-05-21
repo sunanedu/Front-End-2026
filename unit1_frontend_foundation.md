@@ -819,8 +819,8 @@ const greeting = "Hello, World!"
 console.log(greeting)
 ```
 
-[ลิงก์](https://github.com) — ข้อความลิงก์
-![รูปภาพ](./logo.png) — รูปภาพ
+```[ลิงก์](https://github.com) — ข้อความลิงก์ ```
+```![รูปภาพ](./logo.png) — รูปภาพ```
 
 > คำพูดอ้างอิง (Blockquote)
 ```
