@@ -532,7 +532,7 @@ git commit -m "แก้แล้ว"
 git commit -m "aaa"
 ```
 
-> **📌 รูปแบบ Conventional Commits:** `<type>: <description>` โดย type ที่ใช้บ่อย ได้แก่ `feat` (ฟีเจอร์ใหม่), `fix` (แก้ Bug), `docs` (เอกสาร), `style` (จัดรูปแบบ), `chore` (งานทั่วไป)
+> **📌 รูปแบบ Conventional Commits:** `<type>: <description>` โดย type ที่ใช้บ่อย ได้แก่ `feat` (feature ฟีเจอร์ใหม่), `fix` (แก้ Bug), `docs` (documentation เอกสาร), `style` (จัดรูปแบบ), `chore` (งานทั่วไป), `refactor` (ปรับโครงสร้างโค้ดโดยไม่เปลี่ยนการทำงาน), `test` (เพิ่มหรือแก้ไขระบบทดสอบ), `perf` หรือ performance (ปรับปรุงประสิทธิภาพ), `build` (งานเกี่ยวกับ build system หรือ dependency), `ci` หรือ continuous integration (งานเกี่ยวกับ CI/CD), และ `revert` (ย้อนกลับ commit ก่อนหน้า)
 
 ---
 
