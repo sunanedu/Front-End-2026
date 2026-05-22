@@ -10,12 +10,12 @@
 
 | หน่วย | ชื่อหน่วย | ระยะเวลาแนะนำ |
 |-------|-----------|--------------|
-| 1 | พื้นฐานและเส้นทางของนักพัฒนา Front-End | 1 สัปดาห์ |
-| 2 | HTML, CSS และการออกแบบ UI สมัยใหม่ | 2 สัปดาห์ |
-| 3 | JavaScript สมัยใหม่และ TypeScript | 4 สัปดาห์ |
-| 4 | React และ Next.js — Framework หลัก | 3 สัปดาห์ |
-| 5 | การเชื่อมต่อ API, Authentication และการจัดการข้อมูล | 3 สัปดาห์ |
-| 6 | การทดสอบ, การ Deploy และการทำงานในทีมมืออาชีพ | 2 สัปดาห์ |
+| 1 | [พื้นฐานและเส้นทางของนักพัฒนา Front-End](unit1_frontend_foundation.md) | 1 สัปดาห์ |
+| 2 | [HTML, CSS และการออกแบบ UI สมัยใหม่](unit2_html_css_modern_ui.md) | 2 สัปดาห์ |
+| 3 | [JavaScript สมัยใหม่และ TypeScript](unit3_javascript_typescript.md) | 4 สัปดาห์ |
+| 4 | [React และ Next.js — Framework หลัก (Part 1)](unit4_react_nextjs_part1.md) / [Part 2](unit4_react_nextjs_part2.md) | 3 สัปดาห์ |
+| 5 | [การเชื่อมต่อ API, Authentication และการจัดการข้อมูล (Part 1)](unit5_api_auth_data_part1.md) / [Part 2](unit5_api_auth_data_part2.md) | 3 สัปดาห์ |
+| 6 | [การทดสอบ, การ Deploy และการทำงานในทีมมืออาชีพ](unit6_testing_deployment_professional.md) | 2 สัปดาห์ |
 
 ---
 
