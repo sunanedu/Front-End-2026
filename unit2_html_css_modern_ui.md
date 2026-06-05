@@ -802,14 +802,25 @@ body {
 
 Tailwind CSS v4 เปลี่ยนวิธีการตั้งค่าใหม่ — ง่ายขึ้นมาก ไม่ต้องใช้ไฟล์ `tailwind.config.js` แยก
 
-```bash
-# สร้างโปรเจกต์ด้วย Vite (ถ้ายังไม่มี)
+เปิด **Command Prompt** แล้วรันคำสั่งต่อไปนี้:
+
+```cmd
+:: สร้างโปรเจกต์ด้วย Vite (ถ้ายังไม่มี)
 pnpm create vite@latest my-app --template vanilla
 cd my-app
 
-# ติดตั้ง Tailwind CSS v4
+:: ติดตั้ง Tailwind CSS v4
 pnpm add -D tailwindcss @tailwindcss/vite
 ```
+
+**ตรวจสอบว่าติดตั้งสำเร็จ:**
+
+```cmd
+:: ดู dependencies ในโปรเจกต์
+type package.json
+```
+
+ใน `devDependencies` ควรมี `tailwindcss` และ `@tailwindcss/vite` ปรากฏอยู่
 
 **แก้ไข `vite.config.js`**
 
@@ -1011,14 +1022,30 @@ shadcn/ui
 
 ### ติดตั้ง shadcn/ui กับ Next.js
 
-```bash
-# สร้างโปรเจกต์ Next.js ใหม่
+เปิด **Command Prompt** แล้วรันคำสั่งต่อไปนี้ทีละขั้นตอน:
+
+**ขั้นตอนที่ 1 — สร้างโปรเจกต์ Next.js:**
+
+```cmd
 pnpm create next-app@latest my-app --typescript --tailwind --eslint --app
 cd my-app
-
-# ติดตั้ง shadcn/ui (จะถามคำถามการตั้งค่า)
-pnpx shadcn@latest init
 ```
+
+**ตรวจสอบว่าโปรเจกต์สร้างสำเร็จ:**
+
+```cmd
+pnpm dev
+```
+
+เปิดเบราว์เซอร์ไปที่ `http://localhost:3000` ควรเห็นหน้า Next.js เริ่มต้น ✅ จากนั้นกด `Ctrl+C` เพื่อหยุด server
+
+**ขั้นตอนที่ 2 — ติดตั้ง shadcn/ui:**
+
+```cmd
+pnpm dlx shadcn@latest init
+```
+
+> **💡 หมายเหตุ:** ใช้ `pnpm dlx` แทน `pnpx` บน Windows เพื่อความเสถียร
 
 **เมนูตั้งค่า shadcn/ui**
 
@@ -1032,20 +1059,29 @@ Configure the import alias for components: › @/components
 Configure the import alias for utils: › @/lib/utils
 ```
 
-**เพิ่ม Component ที่ต้องการ**
+**ขั้นตอนที่ 3 — เพิ่ม Component ที่ต้องการ:**
 
-```bash
-# เพิ่ม Component แยกทีละตัว
-pnpx shadcn@latest add button
-pnpx shadcn@latest add input
-pnpx shadcn@latest add dialog
-pnpx shadcn@latest add card
-pnpx shadcn@latest add table
-pnpx shadcn@latest add toast
+```cmd
+:: เพิ่ม Component แยกทีละตัว
+pnpm dlx shadcn@latest add button
+pnpm dlx shadcn@latest add input
+pnpm dlx shadcn@latest add dialog
+pnpm dlx shadcn@latest add card
+pnpm dlx shadcn@latest add table
+pnpm dlx shadcn@latest add toast
 
-# หรือเพิ่มหลายตัวพร้อมกัน
-pnpx shadcn@latest add button input dialog card
+:: หรือเพิ่มหลายตัวพร้อมกัน
+pnpm dlx shadcn@latest add button input dialog card
 ```
+
+**ตรวจสอบว่า Component ถูกเพิ่มสำเร็จ:**
+
+```cmd
+:: ดูว่ามีโฟลเดอร์ components/ui สร้างขึ้นมาแล้ว
+dir components\ui
+```
+
+ควรเห็นไฟล์ เช่น `button.tsx`, `card.tsx` ปรากฏอยู่ ✅
 
 ---
 
@@ -1389,24 +1425,30 @@ GitHub:
 
 **ขั้นตอนการทำ**
 
-```bash
-# 1. สร้างโปรเจกต์
+```cmd
+:: 1. สร้างโปรเจกต์
 pnpm create vite@latest landing-page --template vanilla
 cd landing-page
 
-# 2. ติดตั้ง Tailwind CSS v4
+:: 2. ติดตั้ง Tailwind CSS v4
 pnpm add -D tailwindcss @tailwindcss/vite
 
-# 3. เปิด Figma Design ที่กำหนด วิเคราะห์โครงสร้าง
-#    แบ่ง Design ออกเป็น Section ก่อนเขียน Code
+:: 3. เปิด Figma Design ที่กำหนด วิเคราะห์โครงสร้าง
+::    แบ่ง Design ออกเป็น Section ก่อนเขียน Code
 
-# 4. เขียน HTML โครงสร้าง Semantic ก่อน
-#    จากนั้นค่อยเพิ่ม Tailwind Classes
+:: 4. เปิดโปรเจกต์ใน VS Code
+code .
 
-# 5. ทดสอบ Responsive ในทุก Breakpoint
-#    ใช้ Chrome DevTools → Toggle Device Toolbar (Ctrl+Shift+M)
+:: 5. เขียน HTML โครงสร้าง Semantic ก่อน
+::    จากนั้นค่อยเพิ่ม Tailwind Classes
 
-# 6. Push ขึ้น GitHub
+:: 6. รัน Development Server ทดสอบ
+pnpm dev
+
+:: 7. ทดสอบ Responsive ในทุก Breakpoint
+::    ใช้ Chrome DevTools → Toggle Device Toolbar (Ctrl+Shift+M)
+
+:: 8. Push ขึ้น GitHub
 git init
 git add .
 git commit -m "feat: initial landing page"
@@ -1551,7 +1593,7 @@ menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'))
 
 -------------------------
 สรุปคำสั่ง ที่ต้องทำต่อจากบบที่ 1
-```bash
+```cmd
 :: 1. เข้าโฟลเดอร์โปรเจกต์
 cd my-profile
 
