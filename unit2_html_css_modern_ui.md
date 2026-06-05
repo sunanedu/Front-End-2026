@@ -1562,3 +1562,5 @@ pnpm add -D tailwindcss @tailwindcss/vite
 pnpm dev
 
 ```
+
+![ตัวอย่าง](images/unit2-demo.png)
