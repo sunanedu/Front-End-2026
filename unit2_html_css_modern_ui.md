@@ -1553,7 +1553,7 @@ menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'))
 สรุปคำสั่ง ที่ต้องทำต่อจากบบที่ 1
 ```bash
 :: 1. เข้าโฟลเดอร์โปรเจกต์
-cd D:\Code-2569-1\Front-End\my-profile
+cd my-profile
 
 :: 2. ติดตั้ง Tailwind CSS v4 + Vite plugin
 pnpm add -D tailwindcss @tailwindcss/vite
