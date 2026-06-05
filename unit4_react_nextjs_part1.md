@@ -1292,23 +1292,41 @@ Next.js แก้ทุกปัญหาเหล่านี้ในที่
 
 ### สร้างโปรเจกต์ Next.js 15
 
-```bash
-# สร้างโปรเจกต์ใหม่ด้วย pnpm
+เปิด **Command Prompt** แล้วรันคำสั่งต่อไปนี้:
+
+```cmd
+:: สร้างโปรเจกต์ใหม่ด้วย pnpm
 pnpm create next-app@latest my-app
-
-# คำถามที่จะถาม (แนะนำตอบดังนี้):
-# ✔ Would you like to use TypeScript? → Yes
-# ✔ Would you like to use ESLint? → Yes
-# ✔ Would you like to use Tailwind CSS? → Yes
-# ✔ Would you like your code inside a `src/` directory? → No
-# ✔ Would you like to use App Router? (recommended) → Yes
-# ✔ Would you like to use Turbopack for next dev? → Yes
-# ✔ Would you like to customize the import alias (@/* by default)? → No
-
-cd my-app
-pnpm dev
-# เปิดเบราว์เซอร์ไปที่ http://localhost:3000
 ```
+
+ระหว่างสร้างโปรเจกต์จะมีคำถาม ให้ตอบดังนี้:
+
+```
+✔ Would you like to use TypeScript? → Yes
+✔ Would you like to use ESLint? → Yes
+✔ Would you like to use Tailwind CSS? → Yes
+✔ Would you like your code inside a `src/` directory? → No
+✔ Would you like to use App Router? (recommended) → Yes
+✔ Would you like to use Turbopack for next dev? → Yes
+✔ Would you like to customize the import alias (@/* by default)? → No
+```
+
+**ตรวจสอบว่าสร้างสำเร็จ:**
+
+```cmd
+:: เข้าโฟลเดอร์โปรเจกต์
+cd my-app
+
+:: เปิดใน VS Code
+code .
+
+:: รัน Development Server
+pnpm dev
+```
+
+เปิดเบราว์เซอร์ไปที่ `http://localhost:3000` ควรเห็นหน้า Next.js เริ่มต้น ✅
+
+> **💡 Tip:** กด `Ctrl+C` ใน Command Prompt เพื่อหยุด Development Server
 
 ---
 
