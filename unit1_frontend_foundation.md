@@ -368,7 +368,10 @@ pnpm create next-app@latest my-first-app
 
 :: 3. เข้าโฟลเดอร์โปรเจกต์
 cd my-first-app
-
+---- Fix Bug --------------------------------
+pnpm config set buildScriptsAutoApprove true --location project
+pnpm install
+---------------------------------------------
 :: 4. เปิดใน VS Code
 code .
 
