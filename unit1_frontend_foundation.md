@@ -228,47 +228,45 @@
 
 เปรียบง่าย ๆ: ปกติ JavaScript ทำงานได้เฉพาะในเบราว์เซอร์ Node.js ทำให้ JavaScript ทำงานบนเครื่องของเราได้ ทำให้สามารถรันเครื่องมือต่าง ๆ เช่น Compiler, Build Tool ได้
 
-**LTS** (เอลทีเอส) ย่อมาจาก **Long-Term Support** หมายถึงเวอร์ชันที่ได้รับการดูแลและอัปเดตความปลอดภัยระยะยาว เหมาะสำหรับใช้งานจริง
-
 **pnpm** (พีเอ็นพีเอ็ม) คือ Package Manager (แพ็กเกจ แมเนเจอร์) — โปรแกรมจัดการไลบรารีและเครื่องมือที่โปรเจกต์ต้องการ pnpm เร็วกว่าและประหยัดพื้นที่ดิสก์กว่า npm (เอ็นพีเอ็ม) ซึ่งเป็น Package Manager เดิม
 
-**วิธีติดตั้ง Node.js (แนะนำผ่าน nvm):**
+> **✅ สภาพแวดล้อมที่ใช้ในหลักสูตรนี้:** Windows 10, Node.js 24, VS Code, Command Prompt (cmd)
 
-`nvm` (เอ็นวีเอ็ม — Node Version Manager) คือตัวจัดการเวอร์ชัน Node.js ช่วยให้สลับเวอร์ชันได้สะดวก
+**ขั้นตอนที่ 1 — ตรวจสอบ Node.js ที่ติดตั้งไว้แล้ว:**
 
-```bash
-# macOS / Linux — ติดตั้ง nvm ก่อน
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+เปิด **Command Prompt** (กด `Win + R` พิมพ์ `cmd` แล้วกด Enter) จากนั้นรันคำสั่ง:
 
-# หลังติดตั้ง nvm แล้ว ติดตั้ง Node.js LTS
-nvm install --lts
-nvm use --lts
-
-# ตรวจสอบว่าติดตั้งสำเร็จ
-node --version   # ควรแสดง เช่น v22.14.0
-npm --version    # ควรแสดง เช่น 10.9.2
-```
-
-```powershell
-# Windows — ดาวน์โหลด nvm-windows จาก:
-# https://github.com/coreybutler/nvm-windows/releases
-# จากนั้นเปิด PowerShell แล้วรัน:
-nvm install lts
-nvm use lts
-
+```cmd
 node --version
 npm --version
 ```
 
-**ติดตั้ง pnpm:**
-
-```bash
-# ติดตั้ง pnpm ผ่าน npm (ทำครั้งเดียว)
-npm install -g pnpm
-
-# ตรวจสอบ
-pnpm --version   # ควรแสดง เช่น 9.15.0
+ผลลัพธ์ที่ควรได้:
 ```
+v24.x.x
+10.x.x
+```
+
+> **💡 หากพบ Error** `'node' is not recognized` แสดงว่า Node.js ยังไม่ได้ถูกเพิ่มใน PATH — ให้ดาวน์โหลด Installer ใหม่จาก [nodejs.org](https://nodejs.org) และติ๊ก ✅ **"Add to PATH"** ระหว่างติดตั้ง จากนั้นปิดแล้วเปิด cmd ใหม่
+
+**ขั้นตอนที่ 2 — ติดตั้ง pnpm:**
+
+```cmd
+npm install -g pnpm
+```
+
+**ตรวจสอบว่าติดตั้งสำเร็จ:**
+
+```cmd
+pnpm --version
+```
+
+ผลลัพธ์ที่ควรได้:
+```
+9.x.x
+```
+
+> **💡 หากพบ Error** `'pnpm' is not recognized` ให้ปิดแล้วเปิด Command Prompt ใหม่ แล้วลองรันอีกครั้ง
 
 **คำสั่ง pnpm ที่ใช้บ่อย:**
 
@@ -285,9 +283,9 @@ pnpm run build        # รัน script ชื่อ "build"
 
 ### VS Code และ Extension ที่จำเป็น
 
-**VS Code** (วีเอส โค้ด — Visual Studio Code) คือ Code Editor (โค้ด เอดิเตอร์) ที่ได้รับความนิยมสูงสุดในโลก พัฒนาโดย Microsoft ใช้ฟรี
+**VS Code** (วีเอส โค้ด — Visual Studio Code) คือ Code Editor ที่ได้รับความนิยมสูงสุดในโลก พัฒนาโดย Microsoft ใช้ฟรี
 
-**ดาวน์โหลด VS Code:** [code.visualstudio.com](https://code.visualstudio.com)
+> **✅ VS Code ติดตั้งไว้แล้ว** ข้ามขั้นตอนนี้ได้เลย
 
 **Extension** (เอกซ์เทนชัน) คือปลั๊กอินที่เพิ่มความสามารถให้ VS Code ติดตั้งได้จากแถบ Extensions ด้านซ้าย (ไอคอนสี่เหลี่ยม 4 ชิ้น)
 
@@ -313,75 +311,138 @@ pnpm run build        # รัน script ชื่อ "build"
   "editor.fontFamily": "JetBrains Mono, Fira Code, Consolas, monospace",
   "editor.fontLigatures": true,
   "files.autoSave": "onFocusChange",
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
+  "terminal.integrated.defaultProfile.windows": "Command Prompt"
 }
 ```
 
 > **💡 Tip:** ฟอนต์ **JetBrains Mono** หรือ **Fira Code** รองรับ Ligatures (ลิเกเจอร์) ซึ่งทำให้สัญลักษณ์ เช่น `=>`, `!==`, `>=` แสดงผลสวยงามกว่า ดาวน์โหลดได้ฟรีที่ [jetbrains.com/lp/mono](https://www.jetbrains.com/lp/mono/)
 
+> **💡 หมายเหตุ:** การตั้งค่า `"terminal.integrated.defaultProfile.windows": "Command Prompt"` ทำให้ Terminal ใน VS Code ใช้ Command Prompt โดยอัตโนมัติ
+
 ---
 
-### Terminal และ Command Line เบื้องต้น
+### Command Prompt เบื้องต้น (Windows 10)
 
-**Terminal** (เทอร์มินัล) หรือ **Command Line** (คอมมานด์ไลน์) คือโปรแกรมที่ให้เราสั่งงานคอมพิวเตอร์ด้วยการพิมพ์ข้อความ แทนการคลิกเมาส์
+**Command Prompt** (คอมมานด์ พรอมต์) หรือ **cmd** คือโปรแกรมที่ให้เราสั่งงานคอมพิวเตอร์ด้วยการพิมพ์ข้อความ แทนการคลิกเมาส์
 
-ใน VS Code เปิด Terminal ได้ด้วย `` Ctrl+` `` (ปุ่ม Backtick ด้านบนซ้ายของแป้นพิมพ์)
+**วิธีเปิด Command Prompt:**
+- กด `Win + R` พิมพ์ `cmd` แล้วกด Enter
+- หรือค้นหา "Command Prompt" ใน Start Menu
 
-**คำสั่งพื้นฐานที่ต้องรู้:**
+ใน VS Code เปิด Terminal ได้ด้วย `` Ctrl+` `` (ปุ่ม Backtick ด้านบนซ้ายของแป้นพิมพ์) — จะเปิดเป็น Command Prompt ตามที่ตั้งค่าไว้
 
-```bash
-# แสดงไดเรกทอรี (โฟลเดอร์) ปัจจุบัน
-pwd
-# ตัวอย่างผลลัพธ์: /Users/somchai/Documents
+**คำสั่งพื้นฐานที่ต้องรู้ (Windows 10):**
 
-# แสดงรายการไฟล์และโฟลเดอร์
-ls          # macOS/Linux
-dir         # Windows
+```cmd
+:: แสดงไดเรกทอรี (โฟลเดอร์) ปัจจุบัน
+cd
 
-# แสดงแบบละเอียด (รวมไฟล์ที่ซ่อนอยู่)
-ls -la      # macOS/Linux
+:: แสดงรายการไฟล์และโฟลเดอร์
+dir
 
-# เปลี่ยนไดเรกทอรี (cd = change directory)
-cd Documents              # เข้าโฟลเดอร์ Documents
-cd ..                     # ย้อนกลับขึ้นหนึ่งระดับ
-cd ~/Documents/projects   # ไปยัง path เต็ม (~ = โฟลเดอร์ Home)
+:: เปลี่ยนไดเรกทอรี (cd = change directory)
+cd Documents
+cd ..
+cd C:\Users\YourName\Documents\projects
 
-# สร้างโฟลเดอร์ใหม่ (mkdir = make directory)
+:: สร้างโฟลเดอร์ใหม่
 mkdir my-project
 
-# สร้างไฟล์ใหม่
-touch index.html          # macOS/Linux
-echo. > index.html        # Windows
+:: สร้างไฟล์ใหม่
+echo. > index.html
 
-# ล้างหน้าจอ Terminal
-clear       # macOS/Linux
-cls         # Windows
+:: ล้างหน้าจอ
+cls
 ```
 
 **ตัวอย่างการใช้งานจริง — สร้างโปรเจกต์ใหม่:**
 
-```bash
-# 1. ไปยังโฟลเดอร์ที่ต้องการเก็บโปรเจกต์
-cd ~/Documents
+```cmd
+:: 1. ไปยังโฟลเดอร์ที่ต้องการเก็บโปรเจกต์
+cd C:\Users\YourName\Documents
 mkdir projects
 cd projects
 
-# 2. สร้างโปรเจกต์ Next.js ใหม่ด้วย pnpm
+:: 2. สร้างโปรเจกต์ Next.js ใหม่ด้วย pnpm
 pnpm create next-app@latest my-first-app
 
-# 3. เข้าโฟลเดอร์โปรเจกต์
+:: 3. เข้าโฟลเดอร์โปรเจกต์
 cd my-first-app
 
-# 4. เปิดใน VS Code
+:: 4. เปิดใน VS Code
 code .
-# จุด (.) หมายถึง "โฟลเดอร์ปัจจุบัน"
 
-# 5. รัน Development Server
+:: 5. รัน Development Server
 pnpm dev
-# จากนั้นเปิดเบราว์เซอร์ไปที่ http://localhost:3000
 ```
 
-> **💡 Tip:** `localhost` (โลคัลโฮสต์) คือชื่อเรียกของเครื่องคอมพิวเตอร์ตัวเอง `:3000` คือหมายเลข Port (พอร์ต) เปรียบเหมือนประตูบ้านแต่ละบาน Development Server มักใช้ Port 3000 หรือ 5173
+จากนั้นเปิดเบราว์เซอร์ไปที่ `http://localhost:3000`
+
+> **💡 Tip:** `localhost` (โลคัลโฮสต์) คือชื่อเรียกของเครื่องคอมพิวเตอร์ตัวเอง `:3000` คือหมายเลข Port (พอร์ต) Development Server มักใช้ Port 3000 หรือ 5173
+
+---
+
+### สรุปขั้นตอนการตั้งค่าและการทดสอบ (Windows 10)
+
+หลังจากติดตั้งครบแล้ว ให้เปิด **Command Prompt** แล้วรันคำสั่งต่อไปนี้ทีละบรรทัด เพื่อยืนยันว่าเครื่องมือทุกอย่างพร้อมใช้งาน:
+
+```cmd
+:: ✅ ทดสอบ Node.js
+node --version
+:: ผลลัพธ์ที่ต้องได้: v24.x.x
+
+:: ✅ ทดสอบ npm
+npm --version
+:: ผลลัพธ์ที่ต้องได้: 10.x.x
+
+:: ✅ ทดสอบ pnpm
+pnpm --version
+:: ผลลัพธ์ที่ต้องได้: 9.x.x
+
+:: ✅ ทดสอบ Git
+git --version
+:: ผลลัพธ์ที่ต้องได้: git version 2.x.x.windows.x
+
+:: ✅ ทดสอบ VS Code (สั่งเปิดจาก cmd ได้)
+code --version
+:: ผลลัพธ์ที่ต้องได้: 1.x.x
+```
+
+**ทดสอบสร้างโปรเจกต์จริง (Vite + React):**
+
+```cmd
+:: 1. ไปยังโฟลเดอร์ที่ต้องการ
+cd C:\Users\YourName\Documents
+mkdir projects
+cd projects
+
+:: 2. สร้างโปรเจกต์ Vite + React + TypeScript
+pnpm create vite@latest my-test-app --template react-ts
+
+:: 3. เข้าโฟลเดอร์และติดตั้ง dependencies
+cd my-test-app
+pnpm install
+
+:: 4. รัน Development Server
+pnpm dev
+```
+
+เปิดเบราว์เซอร์ไปที่ `http://localhost:5173` — ถ้าเห็นหน้า Vite + React แสดงว่าสภาพแวดล้อมพร้อมใช้งานครบแล้ว ✅
+
+**ทดสอบสร้างโปรเจกต์ Next.js:**
+
+```cmd
+:: อยู่ในโฟลเดอร์ projects แล้ว
+pnpm create next-app@latest my-next-test
+
+:: เข้าโฟลเดอร์และรัน
+cd my-next-test
+pnpm dev
+```
+
+เปิดเบราว์เซอร์ไปที่ `http://localhost:3000` — ถ้าเห็นหน้า Next.js แสดงว่าพร้อมแล้ว ✅
+
+> **⚠️ หากพบปัญหา** ให้ปิดและเปิด Command Prompt ใหม่ก่อนเสมอ เพราะการติดตั้งบางอย่างต้องเริ่ม session ใหม่จึงจะมีผล
 
 ---
 
@@ -418,32 +479,39 @@ Git จำทุกการเปลี่ยนแปลง พร้อมบ
 
 ---
 
-### ติดตั้ง Git
+### ติดตั้ง Git (Windows 10)
 
-```bash
-# macOS — ติดตั้งผ่าน Homebrew
-brew install git
+**ขั้นตอนที่ 1 — ดาวน์โหลดและติดตั้ง Git:**
 
-# หรือดาวน์โหลดจาก https://git-scm.com/download/mac
+ไปที่ [git-scm.com/download/win](https://git-scm.com/download/win) แล้วดาวน์โหลด Installer สำหรับ Windows
 
-# Windows — ดาวน์โหลด Git for Windows จาก
-# https://git-scm.com/download/win
-# (ติดตั้งแล้วจะมี Git Bash ให้ใช้ด้วย)
+ระหว่างติดตั้ง ให้ตั้งค่าดังนี้:
+- **Adjusting your PATH environment** → เลือก `Git from the command line and also from 3rd-party software`
+- ตัวเลือกอื่น ๆ ให้ใช้ค่า Default ได้เลย
 
-# ตรวจสอบ
-git --version   # ควรแสดง เช่น git version 2.47.0
+**ขั้นตอนที่ 2 — ตรวจสอบว่าติดตั้งสำเร็จ:**
+
+เปิด Command Prompt ใหม่ แล้วรัน:
+
+```cmd
+git --version
 ```
 
-**ตั้งค่าข้อมูลส่วนตัว (ทำครั้งแรกครั้งเดียว):**
+ผลลัพธ์ที่ควรได้:
+```
+git version 2.47.x.windows.x
+```
 
-```bash
+**ขั้นตอนที่ 3 — ตั้งค่าข้อมูลส่วนตัว (ทำครั้งแรกครั้งเดียว):**
+
+```cmd
 git config --global user.name "ชื่อจริงของคุณ"
 git config --global user.email "email@example.com"
 
-# ตั้ง Editor เริ่มต้นเป็น VS Code
+:: ตั้ง Editor เริ่มต้นเป็น VS Code
 git config --global core.editor "code --wait"
 
-# ดูการตั้งค่าทั้งหมด
+:: ดูการตั้งค่าทั้งหมด
 git config --list
 ```
 
@@ -757,7 +825,6 @@ out/
 .env.production
 
 # OS files
-.DS_Store        # macOS
 Thumbs.db        # Windows
 
 # Editor
@@ -840,7 +907,7 @@ console.log(greeting)
 ## 🚀 เริ่มต้นใช้งาน
 
 ### ความต้องการ
-- Node.js 22+
+- Node.js 24
 - pnpm 9+
 
 ### ติดตั้ง
@@ -871,7 +938,7 @@ pnpm dev
 
 ✅ เส้นทางที่ชัดเจน: HTML → CSS → JavaScript → TypeScript → React → Next.js
 
-✅ เครื่องมือที่ติดตั้งแล้ว: Node.js LTS, pnpm, VS Code + Extensions, Git
+✅ เครื่องมือที่ติดตั้งและทดสอบแล้ว: Node.js 24, pnpm, VS Code + Extensions, Git (ใช้ผ่าน Command Prompt)
 
 ✅ Git เก็บประวัติโค้ด, GitHub เก็บโค้ดบน Cloud คำสั่งหลัก: add → commit → push
 
@@ -930,7 +997,7 @@ NOTE****
 ฉันกำลังเรียน Front-End Development
 
 ## 🛠 เครื่องมือที่ติดตั้งแล้ว
-- Node.js v22 LTS
+- Node.js v24
 - pnpm
 - VS Code + Extensions
 - Git
