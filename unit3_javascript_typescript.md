@@ -967,12 +967,24 @@ import MyManager from './TaskManager.js'  // ชื่อไหนก็ได�
 
 **ESLint** ตรวจจับ Bug และโค้ดที่เขียนไม่ดี **Prettier** จัดรูปแบบโค้ดอัตโนมัติ — ทั้งคู่ทำงานร่วมกัน:
 
-```bash
-# ติดตั้ง
+เปิด **Command Prompt** ในโฟลเดอร์โปรเจกต์ แล้วรัน:
+
+```cmd
+:: ติดตั้ง ESLint + Prettier
 pnpm add -D eslint prettier eslint-config-prettier @eslint/js
 
-# สร้างไฟล์ Config
+:: สร้างไฟล์ Config ESLint
 pnpm dlx @eslint/create-config
+```
+
+**ตรวจสอบว่าติดตั้งสำเร็จ:**
+
+```cmd
+:: รัน ESLint ตรวจโค้ด
+pnpm lint
+
+:: รัน Prettier จัดรูปแบบโค้ด
+pnpm format
 ```
 
 **`eslint.config.js`:**
@@ -1067,13 +1079,33 @@ calculateTotal(100, 5)    // ✅ 500
 
 ### ติดตั้ง TypeScript กับ Vite
 
-```bash
-# สร้างโปรเจกต์ใหม่ด้วย TypeScript Template
+เปิด **Command Prompt** แล้วรันคำสั่งต่อไปนี้:
+
+```cmd
+:: สร้างโปรเจกต์ใหม่ด้วย TypeScript Template
 pnpm create vite@latest task-manager --template vanilla-ts
 cd task-manager
 pnpm install
+```
+
+**ตรวจสอบว่าสร้างสำเร็จ:**
+
+```cmd
+:: รัน Development Server
 pnpm dev
 ```
+
+เปิดเบราว์เซอร์ไปที่ `http://localhost:5173` ควรเห็นหน้า Vite เริ่มต้น ✅
+จากนั้นกด `Ctrl+C` เพื่อหยุด server
+
+**ตรวจสอบว่า TypeScript Compiler ทำงานได้:**
+
+```cmd
+:: ตรวจสอบ TypeScript ว่าไม่มี Error
+pnpm exec tsc --noEmit
+```
+
+ถ้าไม่มี Error แสดงในหน้าจอ แสดงว่า TypeScript พร้อมใช้งาน ✅
 
 ไฟล์ที่ได้:
 ```
@@ -1652,6 +1684,75 @@ function setupEvents(): void {
 setupEvents()
 render()
 ```
+
+### ขั้นตอนเริ่มต้นโปรเจกต์ (Windows 10)
+
+เปิด **Command Prompt** แล้วรันทีละขั้นตอน:
+
+```cmd
+:: 1. สร้างโปรเจกต์ด้วย Vite + TypeScript template
+pnpm create vite@latest task-manager --template vanilla-ts
+cd task-manager
+pnpm install
+
+:: 2. ติดตั้ง ESLint + Prettier
+pnpm add -D eslint prettier eslint-config-prettier @eslint/js
+pnpm dlx @eslint/create-config
+
+:: 3. เปิดโปรเจกต์ใน VS Code
+code .
+
+:: 4. รัน Development Server ทดสอบ
+pnpm dev
+```
+
+เปิดเบราว์เซอร์ไปที่ `http://localhost:5173` เพื่อตรวจสอบว่าโปรเจกต์รันได้ ✅
+
+**คำสั่งที่ใช้ระหว่างพัฒนา:**
+
+```cmd
+:: รัน dev server
+pnpm dev
+
+:: ตรวจสอบ TypeScript ว่าไม่มี Type Error
+pnpm exec tsc --noEmit
+
+:: รัน ESLint ตรวจโค้ด
+pnpm lint
+
+:: แก้ไข ESLint Error อัตโนมัติ (ที่แก้ได้)
+pnpm lint:fix
+
+:: จัดรูปแบบโค้ดด้วย Prettier
+pnpm format
+
+:: Build สำหรับ Production
+pnpm build
+```
+
+**ก่อน Push ขึ้น GitHub ให้ผ่านทุกขั้นตอนนี้:**
+
+```cmd
+:: ✅ TypeScript ต้องไม่มี Error
+pnpm exec tsc --noEmit
+
+:: ✅ ESLint ต้องไม่มี Error
+pnpm lint
+
+:: ✅ Build ต้องสำเร็จ
+pnpm build
+```
+
+ถ้าทุกคำสั่งผ่านโดยไม่มี Error — พร้อม Push ✅
+
+```cmd
+:: Push ขึ้น GitHub
+git add .
+git commit -m "feat: complete task manager"
+git push origin main
+```
+
+---
 
 ### ข้อกำหนดของโปรเจกต์
 
